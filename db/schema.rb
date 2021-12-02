@@ -10,15 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_01_214740) do
+ActiveRecord::Schema.define(version: 2021_12_01_225217) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cars", force: :cascade do |t|
+    t.string "make"
+    t.boolean "new"
+    t.integer "year"
+    t.integer "vin"
+    t.bigint "dealer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dealer_id"], name: "index_cars_on_dealer_id"
+  end
 
   create_table "cities", force: :cascade do |t|
     t.string "name"
     t.integer "population"
     t.boolean "coastal"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dealers", force: :cascade do |t|
+    t.string "name"
+    t.boolean "has_inventory"
+    t.integer "zip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -33,5 +52,6 @@ ActiveRecord::Schema.define(version: 2021_12_01_214740) do
     t.index ["city_id"], name: "index_venues_on_city_id"
   end
 
+  add_foreign_key "cars", "dealers"
   add_foreign_key "venues", "cities"
 end
