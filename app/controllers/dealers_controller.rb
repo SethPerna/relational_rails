@@ -3,7 +3,7 @@ class DealersController < ApplicationController
     @dealers = Dealer.all
   end
 
-  # def show
-  #   @dealer = Dealer.find(params[:id])
-  # end
+  def show
+    @dealer = Dealer.find(params[:id])
+  end
 end
