@@ -4,7 +4,7 @@ describe 'dealer show page' do
   before do
     @dealer_1 = Dealer.create!(name: 'Aurora', has_inventory: true, zip: 80016)
 
-    visit "/dealers/#{dealer:id}"
+    visit "/dealers/#{@dealer_1.id}"
   end
 
   describe 'when I visit dealer show page' do
