@@ -32,9 +32,8 @@ describe 'city #show page' do
       expect(page).to have_current_path("/cities")
     end
     it 'I see a link that takes me to that cities venues' do
-      click_link "#{@city_1.name} Venues"
-
       expect(page).to have_link("#{@city_1.name} Venues")
+      click_link "#{@city_1.name} Venues"
       expect(page).to have_current_path("/cities/#{@city_1.id}/venues")
     end
   end
