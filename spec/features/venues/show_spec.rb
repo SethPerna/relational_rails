@@ -15,5 +15,18 @@ describe 'venues #index page' do
         expect(page).to have_content(@venue_1.indoor)
       #end
     end
+    it 'I see a link at the top of the page that takes me to venues index' do
+      click_link 'Venues'
+
+      expect(page).to have_link("Venues", :href=>"/venues")
+      expect(page).to have_current_path("/venues")
+    end
+
+    it 'I see a link at the top of the page that takes me to the cities index' do
+      click_link 'Cities'
+
+      expect(page).to have_link("Cities", :href=>"/cities")
+      expect(page).to have_current_path("/cities")
+    end
   end
 end

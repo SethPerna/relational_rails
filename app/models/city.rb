@@ -7,4 +7,8 @@ class City < ApplicationRecord
   def self.in_order
     City.order(created_at: :desc)
   end
+
+  def count_venues
+    Venue.where(city_id: self.id).count
+  end
 end
