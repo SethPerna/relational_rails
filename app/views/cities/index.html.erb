@@ -1,6 +1,11 @@
+<ul>
+  <a href="/venues">Venues</a>
+  <a href="/cities">Cities</a>
+</ul>
 <h1>Cities</h1>
-<% @cities.each do |city| %>
+<% @cities.in_order.each  do |city| %>
   <h3><%= city.name %></h3>
   <p>Population: <%= city.population %></p>
   <p>Coastal: <%= city.coastal %></p>
+  <p>Created at:<%= city.created_at %></p>
 <% end %>
