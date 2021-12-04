@@ -15,7 +15,7 @@ describe 'Cities venues index' do
     visit "/cities/#{@city_1.id}/venues"
   end
   it 'shows all of the venues for the city' do
-
+    
     expect(page).to have_content(@venue_1.name)
     expect(page).to have_content(@venue_2.name)
     expect(page).to have_no_content(@venue_3.name)
