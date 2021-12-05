@@ -2,7 +2,7 @@
   <a href="/venues">Venues</a>
   <a href="/cities">Cities</a>
 </ul>
-<%= link_to "Create Venue", "/venues/new" %>
+<%= link_to "Create Venue", "/cities/#{@city.id}/venues/new" %>
 <% @venues.each do |venue|  %>
   <h3>Name: <%= venue.name %></h3>
   <p>Capacity:<%= venue.capacity %></p>

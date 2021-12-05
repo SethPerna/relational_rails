@@ -28,10 +28,5 @@ describe 'venues #index page' do
       expect(page).to have_link("Cities", :href=>"/cities")
       expect(page).to have_current_path("/cities")
     end
-
-    it 'I see a link to Update Venue' do
-
-      expect(page).to have_link('Update Venue')
-    end
   end
 end

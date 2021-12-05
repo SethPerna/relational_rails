@@ -7,10 +7,16 @@ class VenuesController < ApplicationController
     @venue = Venue.find(params[:id])
   end
 
+  def new
+    @city = City.find(params[:id])
+
+  end
+
   def create
-    venue = Venue.create!(venue_params)
+    @city = City.find(params[:id])
+    venue = @city.venues.create!(venue_params)
     venue.save
-    redirect_to "/venues"
+    redirect_to "/cities/#{@city.id}/venues"
   end
 
   def edit
@@ -20,11 +26,11 @@ class VenuesController < ApplicationController
   def update
     @venue = Venue.find(params[:id])
     @venue.update(venue_params)
-    redirect_to "/venues"
+    redirect_to "/venues/#{@venue.id}"
   end
 
   private
   def venue_params
-    params.permit(:name, :capacity, :indoor, :city_id)
+    params.permit(:name, :capacity, :indoor)
   end
 end
