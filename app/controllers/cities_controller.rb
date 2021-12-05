@@ -12,8 +12,12 @@ class CitiesController < ApplicationController
   end
 
   def create
-    city = City.create!(name: params[:name], population: params[:population], coastal: params[:coastal])
+    city = City.create!(city_params)
     city.save
     redirect_to "/cities"
+  end
+
+  def city_params
+    params.permit(:name, :population, :coastal)
   end
 end
