@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get '/venues/:id', to: 'venues#show'
   get '/cities/:city_id/venues', to: 'city_venues#index'
   post '/cities', to: 'cities#create'
+  get '/cities/:id/edit', to: 'cities#edit'
+  patch '/cities/:id', to: 'cities#update'
 
 
 

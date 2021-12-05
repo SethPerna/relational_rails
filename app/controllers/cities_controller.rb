@@ -20,4 +20,14 @@ class CitiesController < ApplicationController
   def city_params
     params.permit(:name, :population, :coastal)
   end
+
+  def edit
+    @city = City.find(params[:id])
+  end
+
+  def update
+    @city = City.find(params[:id])
+    @city.update(city_params)
+    redirect_to "/cities/#{@city.id}"
+  end
 end
