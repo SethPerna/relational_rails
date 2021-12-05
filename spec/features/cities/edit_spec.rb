@@ -13,12 +13,12 @@ describe 'cit edit' do
     city_1 = City.create!(name: "Denve", population: 750000, coastal: false)
     visit "/cities/#{city_1.id}/edit"
 
-    fill_in 'name', with: 'Boulder'
+    fill_in 'name', with: 'Denver'
     fill_in 'population', with: '750000'
     fill_in 'coastal', with: 'false'
     click_button "Update City"
 
     expect(current_path).to eq("/cities/#{city_1.id}")
-    expect(page).to have_content('Boulder')
+    expect(page).to have_content('Denver')
   end
 end
