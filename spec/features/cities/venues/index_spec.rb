@@ -15,7 +15,7 @@ describe 'Cities venues index' do
     visit "/cities/#{@city_1.id}/venues"
   end
   it 'shows all of the venues for the city' do
-    
+
     expect(page).to have_content(@venue_1.name)
     expect(page).to have_content(@venue_2.name)
     expect(page).to have_no_content(@venue_3.name)
@@ -41,4 +41,28 @@ describe 'Cities venues index' do
     expect(page).to have_link("Cities", :href=>"/cities")
     expect(page).to have_current_path("/cities")
   end
+
+  it 'I see a link to create a new venue' do
+
+    expect(page).to have_link("Create Venue")
+  end
+  it 'links to new page from city index' do
+
+    click_link('Create Venue')
+    expect(current_path).to eq('/venues/new')
+  end
+
+  it 'can create a new venues' do
+    visit '/venues/new'
+
+    fill_in('Name', with: 'Mishawaka')
+    fill_in('Capacity', with: '900')
+    fill_in('Indoor', with: false)
+    fill_in("City", with: "#{@city_1.id}")
+    click_button('Create Venue')
+
+    expect(current_path).to eq("/venues")
+    expect(page).to have_content("Mishawaka")
+  end
+  
 end

@@ -1,0 +1,12 @@
+<%= form_with url: '/venues', method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :capacity %>
+  <%= form.text_field :capacity %>
+  <%= form.label :indoor %>
+  <%= form.text_field :indoor %>
+  <%= form.label :city_id %>
+  <%= form.text_field :city_id %>
+
+  <%= form.submit "Create Venue" %>
+<% end %>

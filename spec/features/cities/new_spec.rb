@@ -18,7 +18,7 @@ describe 'The City creation' do
     click_link('New City')
     expect(current_path).to eq('/cities/new')
   end
-  it 'can create a new artist' do
+  it 'can create a new cities' do
     visit '/cities/new'
 
     fill_in('Name', with: 'Los Angeles')
