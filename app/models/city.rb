@@ -1,5 +1,5 @@
 class City < ApplicationRecord
-  has_many :venues
+  has_many :venues, :dependent => :destroy
 
   validates_presence_of :name
   validates_presence_of :population

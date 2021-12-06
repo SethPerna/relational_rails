@@ -36,5 +36,10 @@ describe 'city #show page' do
       click_link "#{@city_1.name} Venues"
       expect(page).to have_current_path("/cities/#{@city_1.id}/venues")
     end
+
+    it 'I see a link to delete city' do
+
+      expect(page).to have_button("Delete City")
+    end
   end
 end

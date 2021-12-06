@@ -27,6 +27,12 @@ class CitiesController < ApplicationController
     redirect_to "/cities/#{@city.id}"
   end
 
+  def destroy
+    city = City.find(params[:id])
+    city.destroy
+    redirect_to '/cities'
+  end
+
   private
   def city_params
     params.permit(:name, :population, :coastal)

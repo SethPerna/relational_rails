@@ -27,6 +27,6 @@ describe City do
     venue_2 = city_1.venues.create!(name: "Red Rocks", capacity: 9545, indoor: false)
     venue_1 = city_1.venues.create!(name: "Cervantes", capacity: 1450, indoor: true)
 
-    
+    expect(City.alphabetical).to eq([venue_1, venue_2])
   end
 end
