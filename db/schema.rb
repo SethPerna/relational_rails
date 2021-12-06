@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2021_12_01_225217) do
 
   create_table "dealers", force: :cascade do |t|
     t.string "name"
-    t.boolean "has_inventory"
+    t.boolean "open"
     t.integer "zip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
