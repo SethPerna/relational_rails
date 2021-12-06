@@ -5,7 +5,7 @@ describe Dealer do
   end
   describe 'validations' do
     it { should validate_presence_of :name }
-    it { should validate_presence_of :has_inventory }
+    it { should validate_presence_of :open }
     it { should validate_presence_of :zip }
   end
 end
