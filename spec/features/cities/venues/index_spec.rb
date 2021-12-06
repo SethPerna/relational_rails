@@ -8,8 +8,8 @@ describe 'Cities venues index' do
   before do
     @city_1 = City.create!(name: "Denver", population: 750000, coastal: false)
     @city_2 = City.create!(name: "Shambala", population: 750000, coastal: false)
-    @venue_1 = @city_1.venues.create!(name: "Cervantes", capacity: 1450, indoor: true)
     @venue_2 = @city_1.venues.create!(name: "Red Rocks", capacity: 9545, indoor: false)
+    @venue_1 = @city_1.venues.create!(name: "Cervantes", capacity: 1450, indoor: true)
     @venue_3 = @city_2.venues.create!(name: "Eldorado", capacity: 545, indoor: false)
 
     visit "/cities/#{@city_1.id}/venues"
@@ -42,4 +42,10 @@ describe 'Cities venues index' do
     expect(page).to have_current_path("/cities")
   end
 
+  it 'I see a link to order venue' do
+
+    expect(page).to have_link("Order Venues", :href=>"/cities/#{@city_1.id}/venues?sort=asc")
+    click_link "Order Venues"
+    expect(@venue_1.name).to appear_before(@venue_2.name)
+  end
 end

@@ -10,4 +10,5 @@ describe Venue do
 
     expect(Venue.true_records).to eq([venue_1])
   end
+
 end

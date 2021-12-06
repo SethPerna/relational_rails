@@ -11,4 +11,8 @@ class City < ApplicationRecord
   def count_venues
     Venue.where(city_id: self.id).count
   end
+
+  def self.alphabetical
+    Venue.order(:name)
+  end
 end
