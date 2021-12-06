@@ -3,7 +3,7 @@
   <a href="/cities">Cities</a>
 </ul>
 <h1>Venues</h1>
-<% @venues.each do |venue| %>
+<% @venues.true_records.each do |venue| %>
   <div id='venue-<%= venue.id %>'>
     <h3>Name: <%= venue.name %></h3>
     <p>Capacity: <%= venue.capacity %></p>
