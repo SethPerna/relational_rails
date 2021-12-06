@@ -28,5 +28,10 @@ describe 'venues #index page' do
       expect(page).to have_link("Cities", :href=>"/cities")
       expect(page).to have_current_path("/cities")
     end
+
+    it 'I see button Delete Venue' do
+
+      expect(page).to have_button('Delete Venue')
+    end
   end
 end

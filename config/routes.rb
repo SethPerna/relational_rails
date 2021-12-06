@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   post 'cities/:id/venues', to: 'venues#create'
   get '/venues/:id/edit', to: 'venues#edit'
   patch '/venues/:id', to: 'venues#update'
+  delete '/venues/:id', to: 'venues#destroy'
 
 
 
