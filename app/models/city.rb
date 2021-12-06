@@ -1,5 +1,5 @@
 class City < ApplicationRecord
-  has_many :venues
+  has_many :venues, :dependent => :destroy
 
   validates_presence_of :name
   validates_presence_of :population
@@ -10,5 +10,9 @@ class City < ApplicationRecord
 
   def count_venues
     Venue.where(city_id: self.id).count
+  end
+
+  def self.alphabetical
+    Venue.order(:name)
   end
 end
