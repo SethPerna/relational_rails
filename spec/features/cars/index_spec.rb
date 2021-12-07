@@ -21,5 +21,19 @@ describe 'cars index page' do
       expect(page).to have_content(@car_2.year)
       expect(page).to have_content(@car_2.vin)
     end
+
+     it 'I see a link at the top of the page that takes me to the cars index' do
+       click_link "Cars"
+
+       expect(page).to have_link("Cars", :href=>"/cars")
+       expect(page).to have_current_path("/cars")
+     end
+
+     it 'I see a link at the top of the page that takes me to the dealears index' do
+       click_link "Cars"
+
+       expect(page).to have_link("Cars", :href=>"/cars")
+       expect(page).to have_current_path("/cars")
+     end
   end
 end
