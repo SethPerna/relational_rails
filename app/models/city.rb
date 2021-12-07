@@ -12,11 +12,11 @@ class City < ApplicationRecord
     Venue.where(city_id: self.id).count
   end
 
-  def self.alphabetical
-    Venue.order(:name)
+  def alphabetical
+    venues.order(:name)
   end
 
-  def self.capacity_filter(capacity)
-    Venue.where('capacity > ?', capacity)
+  def capacity_filter(capacity)
+    venues.where('capacity > ?', capacity)
   end
 end
