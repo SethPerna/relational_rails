@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   delete '/cities/:id', to: 'cities#destroy'
   delete '/cities', to: 'cities#destroy'
 
-
   get '/venues', to: 'venues#index'
   get '/venues/:id', to: 'venues#show'
   get 'cities/:id/venues/new', to: 'venues#new'

@@ -21,4 +21,13 @@ describe 'destroy city' do
     expect(current_path).to eq('/cities')
     expect(page).to_not have_content("Denver")
   end
+  it 'from index page every city has a delete link' do
+    city_1 = City.create!(name: "Denver", population: 750000, coastal: false)
+    city_2 = City.create!(name: "DC", population: 750000, coastal: true)
+    visit '/cities'
+    expect(page).to have_link("Delete #{city_2.name}")
+    click_link("Delete #{city_2.name}")
+    expect(current_path).to eq("/cities")
+    expect(page).to_not have_content("DC")
+  end
 end
