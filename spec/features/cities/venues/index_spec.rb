@@ -9,7 +9,7 @@ describe 'Cities venues index' do
     @city_1 = City.create!(name: "Denver", population: 750000, coastal: false)
     @city_2 = City.create!(name: "Shambala", population: 750000, coastal: false)
     @venue_2 = @city_1.venues.create!(name: "Red Rocks", capacity: 9545, indoor: false)
-    @venue_1 = @city_1.venues.create!(name: "Cervantes", capacity: 1450, indoor: true)
+    @venue_1 = @city_1.venues.create!(name: "Cervantes", capacity: 1500, indoor: true)
     @venue_3 = @city_2.venues.create!(name: "Eldorado", capacity: 545, indoor: false)
 
     visit "/cities/#{@city_1.id}/venues"
@@ -55,5 +55,12 @@ describe 'Cities venues index' do
     click_link("Delete #{@venue_1.name}")
     expect(current_path).to eq("/venues")
     expect(page).to_not have_content("Cervantes")
+  end
+
+  it 'I see a form that takes a numerical input and limits venues based on capacity' do
+
+    fill_in 'Venues with capacity over', with: '2000'
+    click_button 'Apply'
+    expect(page).to_not have_content('Cervantes')
   end
 end
