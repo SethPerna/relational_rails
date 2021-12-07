@@ -14,5 +14,9 @@ describe 'dealer show page' do
       expect(page).to have_content(@dealer_1.open)
       expect(page).to have_content(@dealer_1.zip)
     end
+    it 'I see a count of the number of cars associated with this dealer' do
+
+      expect(page).to have_content("Number of cars: #{@dealer_1.count_cars}")
+    end
   end
 end
