@@ -1,6 +1,7 @@
 <ul>
   <a href="/cars">Cars</a>
   <a href="/dealers">Dealers</a>
+  <a href="/dealers/<%= @dealer.id %>/cars"><%= @dealer.name %> Cars</a>
 </ul>
 <h1>Dealer: <%= @dealer.name %></h1>
 <h3>Open: <%= @dealer.open %></h3>
