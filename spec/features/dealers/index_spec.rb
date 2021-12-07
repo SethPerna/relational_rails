@@ -15,8 +15,8 @@ describe 'dealer index page' do
       expect(page).to have_content(@dealer_2.name)
     end
 
-    # it 'I see dealers are ordered by the most recently created first' do
-    #   expect(@dealer_2.name).to appear_before(@dealer_1.name)
-    # end
+    it 'I see dealers are ordered by the most recently created first' do
+      expect(@dealer_2.name).to appear_before(@dealer_1.name)
+    end
   end
 end
