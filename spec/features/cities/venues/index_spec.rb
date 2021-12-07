@@ -48,4 +48,12 @@ describe 'Cities venues index' do
     click_link "Order Venues"
     expect(@venue_1.name).to appear_before(@venue_2.name)
   end
+
+  it 'I see a link to delete the venue' do
+
+    expect(page).to have_link("Delete #{@venue_1.name}")
+    click_link("Delete #{@venue_1.name}")
+    expect(current_path).to eq("/venues")
+    expect(page).to_not have_content("Cervantes")
+  end
 end

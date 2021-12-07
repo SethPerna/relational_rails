@@ -8,4 +8,5 @@
   <h3>Name: <%= venue.name %></h3>
   <p>Capacity:<%= venue.capacity %></p>
   <p>Indoor: <%= venue.indoor %></p>
+  <%= link_to "Delete #{venue.name}", "/venues/#{venue.id}", method: :delete %>
 <% end %>
