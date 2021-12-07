@@ -1,4 +1,5 @@
 <h1>Dealers</h1>
-<% @dealers.each do |dealer| %>
+<% @dealers.in_order.each do |dealer| %>
   <h3><%= dealer.name %></h3>
+  <p>Created: <%= dealer.created_at %></p>
 <% end %>
