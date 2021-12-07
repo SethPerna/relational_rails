@@ -10,3 +10,8 @@
   <p>Indoor: <%= venue.indoor %></p>
   <%= link_to "Delete #{venue.name}", "/venues/#{venue.id}", method: :delete %>
 <% end %>
+<%= form_with url: "/cities/#{@city.id}/venues", method: :get, local: true  do |form| %>
+  <%= form.label :capacity, 'Venues with capacity over' %>
+  <%= form.text_field :capacity %>
+  <%= form.submit 'Apply' %>
+<% end %>

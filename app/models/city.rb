@@ -15,4 +15,8 @@ class City < ApplicationRecord
   def self.alphabetical
     Venue.order(:name)
   end
+
+  def self.capacity_filter(capacity)
+    Venue.where('capacity > ?', capacity)
+  end
 end
