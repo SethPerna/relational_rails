@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 City.destroy_all
 Venue.destroy_all
 @city_1 = City.create!(name: "Denver", population: 750000, coastal: false)
@@ -17,9 +18,12 @@ Venue.destroy_all
 
 
 
-# Dealer.destory_all
-# Car.destroy_all
-# @dealer_1 = Dealer.create!(name: 'Aurora', has_inventory: true, zip: 80016)
-# @dealer_2 = Dealer.create!(name: 'Virginia', has_inventory: false, zip: 22642)
-# @car_1 = @dealer_1.cars.create!(make: 'Volvo', new: true, year: 2021, vin: 23456)
-# @car_2 = @dealer_2.cars.create!(make: 'Audi', new: false, year: 2019, vin: 7829291)
+
+
+Dealer.destroy_all
+Car.destroy_all
+@dealer_1 = Dealer.create!(name: 'Aurora', open: true, zip: 80016)
+@dealer_2 = Dealer.create!(name: 'Virginia', open: true, zip: 22642)
+@car_1 = @dealer_1.cars.create!(make: 'Volvo', new: true, year: 2021, vin: 23456)
+@car_2 = @dealer_2.cars.create!(make: 'Audi', new: false, year: 2019, vin: 7829291)
+
