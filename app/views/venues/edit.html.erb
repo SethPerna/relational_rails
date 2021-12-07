@@ -1,0 +1,10 @@
+<%= form_with url: "/venues/#{@venue.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :capacity %>
+  <%= form.text_field :capacity %>
+  <%= form.label :indoor %>
+  <%= form.text_field :indoor %>
+
+  <%= form.submit "Update Venue" %>
+<% end %>

@@ -5,6 +5,7 @@ describe 'dealer index page' do
     @dealer_1 = Dealer.create!(name: 'Aurora', open: true, zip: 80016)
     @dealer_2 = Dealer.create!(name: 'Virginia', open: true, zip: 22642)
 
+
     visit '/dealers'
   end
 

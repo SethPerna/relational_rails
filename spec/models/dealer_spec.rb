@@ -26,3 +26,4 @@ describe Dealer do
   expect(dealer_2.count_cars).to eq(1)
   end
 end
+

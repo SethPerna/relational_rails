@@ -2,6 +2,10 @@
   <a href="/venues">Venues</a>
   <a href="/cities">Cities</a>
 </ul>
+<%= link_to 'Update Venue', "/venues/#{@venue.id}/edit" %>
+<p><h3><%= @venue.name %>
+  <%= button_to "Update Venue", "/venues/#{@venue.id}/edit", method: :post %></h3>
+  <%= button_to "Delete Venue", "/venues/#{@venue.id}", method: :delete %></p>
 <h1>Venue: <%= @venue.name %></h1>
 <h3>Population: <%= @venue.capacity %></h3>
 <h3>Indoor: <%= @venue.indoor %></h3>
