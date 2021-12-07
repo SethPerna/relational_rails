@@ -8,4 +8,8 @@ class Dealer < ApplicationRecord
   def self.in_order
     Dealer.order(created_at: :desc)
   end
+
+  def count_cars
+    Car.where(dealer_id: self.id).count
+  end
 end
