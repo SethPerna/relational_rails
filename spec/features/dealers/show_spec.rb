@@ -32,5 +32,11 @@ describe 'dealer show page' do
       expect(page).to have_link("Cars", :href=>"/cars")
       expect(page).to have_current_path("/cars")
     end
+
+    it 'I see a link to take me to that dealers cars index page' do
+      expect(page).to have_link("#{@dealer_1.name} Cars")
+      click_link "#{@dealer_1.name} Cars"
+      expect(page).to have_current_path("/dealers/#{@dealer_1.id}/cars")
+    end
   end
 end
