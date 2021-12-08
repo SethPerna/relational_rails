@@ -29,11 +29,12 @@ Rails.application.routes.draw do
   get '/dealers/:dealer_id/cars', to: 'dealer_cars#index'
   get 'dealers/:id/edit', to: 'dealers#edit'
   patch '/dealers/:id', to: 'dealers#update'
-  get '/dealers/:id/cars/new', to: 'cars#new'
-  post '/dealers/:id/cars', to: 'cars#create'
+  delete 'dealers/:id', to: 'dealers#destroy'
 
   get '/cars', to: 'cars#index'
   get '/cars/:id', to: 'cars#show'
+  get '/dealers/:id/cars/new', to: 'cars#new'
+  post '/dealers/:id/cars', to: 'cars#create'
   get '/cars/:id/edit', to: 'cars#edit'
   patch '/cars/:id', to: 'cars#update'
 

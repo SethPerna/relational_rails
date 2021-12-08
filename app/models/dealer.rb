@@ -1,5 +1,5 @@
 class Dealer < ApplicationRecord
-  has_many :cars
+  has_many :cars, :dependent => :destroy
 
   validates_presence_of :name
   validates_presence_of :open
