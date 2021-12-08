@@ -23,11 +23,27 @@ describe 'cars show page' do
       expect(page).to have_current_path("/cars")
     end
 
-    it 'I see a link at the top of the page that takes me to the dealears index' do
-      click_link "Cars"
+    it 'I see a link at the top of the page that takes me to the dealers index' do
+      click_link "Dealers"
 
-      expect(page).to have_link("Cars", :href=>"/cars")
-      expect(page).to have_current_path("/cars")
+      expect(page).to have_link("Dealers", :href=>"/dealers")
+      expect(page).to have_current_path("/dealers")
+    end
+
+    it 'I see a link to update that car, Update Car' do
+      click_link "Update Car"
+
+      expect(page).to have_button("Update Car")
+      expect(page).to have_current_path("/cars/#{@car_1.id}/edit")
+
+      fill_in('Make', with: 'Toyota')
+      fill_in('New', with: true)
+      fill_in('Year', with: 2021)
+      fill_in('Vin', with: '5375795')
+      click_button('Update Car')
+
+      expect(current_path).to eq("/cars/#{@car_1.id}")
+      expect(page).to have_content("Toyota")
     end
   end
 end
