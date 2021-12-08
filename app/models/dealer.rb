@@ -12,4 +12,8 @@ class Dealer < ApplicationRecord
   def count_cars
     Car.where(dealer_id: self.id).count
   end
+
+  def self.alphabetical
+    Car.order(:make)
+  end
 end

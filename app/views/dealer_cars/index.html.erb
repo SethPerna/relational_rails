@@ -3,6 +3,7 @@
   <a href="/dealers">Dealers</a>
 </ul>
 <%= link_to "Create Car", "/dealers/#{@dealer.id}/cars/new" %>
+<%= link_to "Sort Order", "/dealers/#{@dealer.id}/cars?sort=asc" %>
 <% @cars.each do |car| %>
 <h3>Make: <%= car.make %><h3>
   <p>New: <%= car.new %></p>
