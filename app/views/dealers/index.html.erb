@@ -5,7 +5,7 @@
 <%= link_to "New Dealer", "/dealers/new" %>
 <h1>Dealers</h1>
 <% @dealers.in_order.each do |dealer| %>
-  <h3><%= dealer.name %></h3>
+  <h3><%= dealer.name %> <%= link_to "Update #{dealer.name}", "/dealers/#{dealer.id}/edit" %></h3>
   <p><%= dealer.zip %></p>
   <p>Created: <%= dealer.created_at %></p>
 <% end %>
