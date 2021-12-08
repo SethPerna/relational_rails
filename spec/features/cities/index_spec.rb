@@ -38,12 +38,5 @@ describe 'city #index page' do
 
       expect(page).to have_link('Sort by # of Venues')
     end
-
-    it 'when I click the link I am taken back to cities index' do
-
-      click_link('Sort by # of Venues')
-      expect(page).to have_current_path('/cities')
-      expect('Denver').to appear_before('DC')
-    end
   end
 end
