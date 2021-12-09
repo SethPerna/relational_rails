@@ -16,9 +16,8 @@ describe 'Dealer creation' do
     fill_in('Open', with: true)
     fill_in('Zip', with: '80019')
     click_button('Create Dealer')
-
+    
     expect(current_path).to eq("/dealers")
-    save_and_open_page
     expect(page).to have_content("80019")
   end
 end

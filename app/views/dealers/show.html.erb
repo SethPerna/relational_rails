@@ -2,8 +2,10 @@
   <a href="/cars">Cars</a>
   <a href="/dealers">Dealers</a>
   <a href="/dealers/<%= @dealer.id %>/cars"><%= @dealer.name %> Cars</a>
+  <a href="/dealers/<%= @dealer.id %>/edit"> Update Dealer</a>
 </ul>
-<h1>Dealer: <%= @dealer.name %></h1>
+<h3>Dealer: <%= @dealer.name %>
+  <%= link_to "Delete Dealer", "/dealers/#{@dealer.id}", method: :delete %></h3>
 <h3>Open: <%= @dealer.open %></h3>
 <h3>Zip: <%= @dealer.zip %></h3>
 <p>Number of cars: <%= @dealer.count_cars %></p>

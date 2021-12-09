@@ -1,0 +1,12 @@
+<%= form_with url: "/cars/#{@car.id}", method: :patch, local: true do |form| %>
+  <%= form.label :make %>
+  <%= form.text_field :make %>
+  <%= form.label :new %>
+  <%= form.text_field :new %>
+  <%= form.label :year %>
+  <%= form.text_field :Year %>
+  <%= form.label :vin %>
+  <%= form.text_field :vin %>
+
+  <%= form.submit "Update Car" %>
+<% end %>

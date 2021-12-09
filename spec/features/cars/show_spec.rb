@@ -23,11 +23,11 @@ describe 'cars show page' do
       expect(page).to have_current_path("/cars")
     end
 
-    it 'I see a link at the top of the page that takes me to the dealears index' do
-      click_link "Cars"
+    it 'I see a link at the top of the page that takes me to the dealers index' do
+      click_link "Dealers"
 
-      expect(page).to have_link("Cars", :href=>"/cars")
-      expect(page).to have_current_path("/cars")
+      expect(page).to have_link("Dealers", :href=>"/dealers")
+      expect(page).to have_current_path("/dealers")
     end
   end
 end

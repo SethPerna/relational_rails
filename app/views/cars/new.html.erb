@@ -1,0 +1,11 @@
+<%= form_with url: "/dealers/#{@dealer.id}/cars", method: :post, local: true do |form| %>
+  <%= form.label :make %>
+  <%= form.text_field :make %>
+  <%= form.label :new %>
+  <%= form.text_field :new %>
+  <%= form.label :year %>
+  <%= form.text_field :year %>
+  <%= form.label :vin %>
+  <%= form.text_field :vin %>
+  <%= form.submit "Create Car" %>
+<% end %>

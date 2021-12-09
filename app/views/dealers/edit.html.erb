@@ -1,0 +1,10 @@
+
+<%= form_with url: "/dealers/#{@dealer.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :open %>
+  <%= form.text_field :open %>
+  <%= form.label :zip %>
+  <%= form.text_field :zip %>
+  <%= form.submit "Update Dealer" %>
+<% end %>

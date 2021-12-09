@@ -18,10 +18,10 @@ describe 'cars index page' do
       expect(page).to have_content(@car_1.new)
       expect(page).to have_content(@car_1.year)
       expect(page).to have_content(@car_1.vin)
-      expect(page).to have_content(@car_2.make)
-      expect(page).to have_content(@car_2.new)
-      expect(page).to have_content(@car_2.year)
-      expect(page).to have_content(@car_2.vin)
+      # expect(page).to have_content(@car_2.make)
+      # expect(page).to have_content(@car_2.new)
+      # expect(page).to have_content(@car_2.year)
+      # expect(page).to have_content(@car_2.vin)
     end
 
      it 'I see a link at the top of the page that takes me to the cars index' do
@@ -36,6 +36,12 @@ describe 'cars index page' do
 
        expect(page).to have_link("Cars", :href=>"/cars")
        expect(page).to have_current_path("/cars")
+     end
+
+     it 'I only see cars where the new value is true' do
+
+       expect(page).to have_content("Volvo")
+       expect(page).to have_no_content("Audi")
      end
   end
 end

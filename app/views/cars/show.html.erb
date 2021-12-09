@@ -2,6 +2,8 @@
   <a href="/cars">Cars</a>
   <a href="/dealers">Dealers</a>
 </ul>
+<%= link_to 'Update Car', "/cars/#{@car.id}/edit", method: :post %>
+<%= link_to "Delete Car", "/cars/#{@car.id}", method: :delete %>
 <h1>Car: <%= @car.make %></h1>
 <h3>New: <%= @car.new %></h3>
 <h3>Year: <%= @car.year %></h3>
