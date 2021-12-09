@@ -2,8 +2,9 @@
   <a href="/venues">Venues</a>
   <a href="/cities">Cities</a>
 </ul>
+<%= link_to 'Sort by # of Venues', '/cities', method: :get %>
 <h1>Cities</h1>
-<% @cities.in_order.each  do |city| %>
+<% @cities.each  do |city| %>
   <h3><%= city.name %></h3>
   <p>Population: <%= city.population %></p>
   <p>Coastal: <%= city.coastal %></p>

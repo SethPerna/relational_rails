@@ -33,5 +33,10 @@ describe 'city #index page' do
       expect(page).to have_link("Cities", :href=>"/cities")
       expect(page).to have_current_path("/cities")
     end
+
+    it 'I see a link to sort cities by the number of venues associated with that city' do
+
+      expect(page).to have_link('Sort by # of Venues')
+    end
   end
 end
